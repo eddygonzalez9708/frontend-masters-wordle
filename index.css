@@ -44,4 +44,19 @@ header {
     width: 70px;
     height: 68px;
     border: 5px solid lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+@keyframes error {
+    50% {
+        border: 5px solid red;
+    }
+}
+
+.error {
+    animation: error 1s;
 }
