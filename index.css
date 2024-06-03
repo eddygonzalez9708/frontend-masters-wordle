@@ -22,7 +22,9 @@ header {
 }
 
 .main-content {
-    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .row-container {
@@ -95,7 +97,13 @@ header {
     91% {
       color: rgb(255, 0, 127);
     }
-  }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
 
 .invalid-word {
     animation: invalid-word 1s;
@@ -103,4 +111,11 @@ header {
 
 .rainbow {
     animation: rainbow 4s infinite linear;
+}
+
+.spiral {
+    animation: spin 2s infinite linear;
+    width: 100px;
+    top: 0;
+    visibility: hidden;
 }

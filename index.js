@@ -2,15 +2,21 @@ let row = 1
 let square = 0
 let word = ""
 let correctWord = ""
+let loading = false
+let spiral = document.querySelector(".spiral")
 
 function validKey(e) {
-    if (/^[a-zA-z]$/.test(e.key)) {
-        addKeyToSquare(e.key)
-    } else if (e.key === "Enter") {
-        validateRow()
-    } else if (e.key === "Backspace") {
-        deleteSquareKey()
-    }
+    console.log('loading ', loading)
+    if (!loading)
+        if (/^[a-zA-z]$/.test(e.key)) {
+            addKeyToSquare(e.key)
+        } else if (e.key === "Enter") {
+            loading = true
+            spiral.style.visibility = "unset"
+            validateRow()
+        } else if (e.key === "Backspace") {
+            deleteSquareKey()
+        }
 }
 
 async function validateRow() {
@@ -36,6 +42,9 @@ async function validateRow() {
             }, 1000)
         }
     }
+
+    loading = false
+    spiral.style.visibility = "hidden"
 }
 
 async function validateWord() {
