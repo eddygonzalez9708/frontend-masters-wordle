@@ -53,10 +53,29 @@ header {
     font-weight: bold;
 }
 
-@keyframes invalid-word {
+.correct {
+    background-color: green;
+    color: white;
+}
+
+.wrong {
+    background-color: grey;
+    color: white;
+}
+
+.close {
+    background-color: yellow;
+    color: white;
+}
+
+@keyframes invalid {
     50% {
         border: 5px solid red;
     }
+}
+
+.invalid {
+    animation: invalid 1s;
 }
 
 @keyframes rainbow {
@@ -99,18 +118,14 @@ header {
     }
 }
 
+.rainbow {
+    animation: rainbow 4s infinite linear;
+}
+
 @keyframes spin {
     to {
         transform: rotate(360deg);
     }
-}
-
-.invalid-word {
-    animation: invalid-word 1s;
-}
-
-.rainbow {
-    animation: rainbow 4s infinite linear;
 }
 
 .spiral {
@@ -118,4 +133,8 @@ header {
     width: 100px;
     top: 0;
     visibility: hidden;
+}
+
+.show {
+    visibility: visible;
 }
